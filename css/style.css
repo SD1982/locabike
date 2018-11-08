@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+* {
+    font-family: 'Roboto';
+    margin: 0 auto;
+}
+
+/* ------------------- Header -------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------- */
+
+header {
+    position: relative;
+    height: 130px;
+    width: 90%;
+    margin: 15px auto;
+    background-color: #FFFFFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+}
+
+h1 {
+    position: absolute;
+    color: #E35C00;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header img:first-child {
+    max-height: 120px;
+    position: absolute;
+    margin: 10px;
+    left: 0;
+}
+
+header img:last-child {
+    max-height: 100px;
+    margin: 10px;
+    position: absolute;
+    right: 0;
+}
+
+/* ------------------- diaporama -------------------------------------------------- */
+
+#diaporama {
+    position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    height: 400px;
+    margin: 15px auto;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+}
+
+#diaporama h2 {
+    margin: 10px auto;
+    text-align: center;
+}
+
+#container {
+    width: 90%;
+    height: 90%;
+}
+
+#slider {
+    position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+}
+
+.slide:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    max-width: 90%;
+    height: 240px;
+}
+
+figure {
+    width: 100%;
+    font-size: 16px;
+}
+
+/* -------------------- bouton diaporama -------------------------------------*/
+
+#diaporama button {
+    background-color: #E35C00;
+    border: solid 2px #d44d02;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#controlDiapo {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* ---------------------- Section Reservation-Map --------------------- */
+
+#reservation-map {
+    width: 90%;
+    height: 600px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+#map {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    margin: 5px;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+    margin: 0;
+}
+
+#reservation {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #45515B;
+    color: white;
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+}
+
+#reservation h2 {
+    margin: 10px auto;
+}
+
+#nomStation {
+    margin: 10px auto;
+    font-size: 20px;
+}
+
+#etatStation {
+    margin: 10px auto;
+}
+
+#veloDispo {
+    margin: 10px auto;
+}
+
+#reserv-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#boutonReservation {
+    display: none;
+    width: 130px;
+    height: 40px;
+    margin: 10px auto;
+    -webkit-box-shadow: 2px 2px 3px #000;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 6px;
+}
+
+#boutonFermer {
+    width: 130px;
+    height: 40px;
+    margin: 10px auto;
+    -webkit-box-shadow: 2px 2px 3px #000;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 6px;
+}
+
+#boutonReservation button {
+    width: 100%;
+    height: 100%;
+    background-color: #E35C00;
+    border: none;
+    -webkit-box-shadow: inset -1px -1px 10px #181717;
+    box-shadow: inset -1px -1px 10px #181717;
+    color: #EBE9E9;
+    text-shadow: 2px 2px 1px #000;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#boutonFermer button {
+    width: 100%;
+    height: 100%;
+    background-color: #E35C00;
+    border: none;
+    -webkit-box-shadow: inset -1px -1px 10px #181717;
+    box-shadow: inset -1px -1px 10px #181717;
+    color: #EBE9E9;
+    text-shadow: 2px 2px 1px #000;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#messageErreur {
+    display: none;
+    margin: 10px auto;
+}
+
+#messageErreurReservation {
+    display: none;
+    margin: 10px 5px;
+}
+
+/* ------------------- canvas -------------------------------------------------- */
+
+#canvaSignature {}
+
+#canvas {
+    width: 90%;
+    height: 120px;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+    background-color: white;
+    margin: 5px;
+}
+
+#canvasControl {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.boutonCanvas {
+    width: 130px;
+    height: 40px;
+    margin: 3px auto;
+    -webkit-box-shadow: 2px 2px 3px #000;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 6px;
+}
+
+#boutonValider {
+    display: none;
+}
+
+#boutonEffacer {
+    display: none;
+}
+
+.boutonCanvas button {
+    width: 100%;
+    height: 100%;
+    background-color: #E35C00;
+    border: none;
+    -webkit-box-shadow: inset -1px -1px 10px #181717;
+    box-shadow: inset -1px -1px 10px #181717;
+    color: #EBE9E9;
+    text-shadow: 2px 2px 1px #000;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* ------------------- cadre infos reservation -------------------------------------------------- */
+
+#infos-reserv {
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#reservation-Infos {
+    display: none;
+    margin: 15px auto;
+    font-size: 23px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #45515B;
+    color: white;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+    width: 90%;
+    height: auto;
+    top: 610px;
+}
+
+#messageReservation {
+    margin: 15px auto;
+}
+
+#timer {
+    margin-top: 10px;
+}
+
+#boutonAnnuler {
+    display: none;
+    margin: 15px auto;
+    width: 130px;
+    height: 40px;
+    -webkit-box-shadow: 2px 2px 3px #000;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 6px;
+}
+
+#boutonAnnuler button {
+    width: 100%;
+    height: 100%;
+    background-color: #E35C00;
+    border: none;
+    -webkit-box-shadow: inset -1px -1px 10px #181717;
+    box-shadow: inset -1px -1px 10px #181717;
+    color: #EBE9E9;
+    text-shadow: 2px 2px 1px #000;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* ------------------- Footer -------------------------------------------------- */
+
+#contact {
+    height: auto;
+    width: 90%;
+    border: 3px solid #E35C00;
+    border-radius: 15px;
+    margin: 15px auto;
+    background-color: #FFFFFF;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#contact nav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#menuReseaux {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+}
+
+#menuReseaux li {
+    padding: 25px;
+}
+
+#menuReseaux i {
+    color: #E35C00;
+    font-size: 25px;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 25px;
+}
+
+.mailContact {
+    margin: 15px auto;
+    font-size: 25px;
+}

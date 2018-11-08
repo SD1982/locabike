@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>LocaBike</title>
+    <meta charset=utf-8>
+    <meta name="description" content="Trouvez les stations de Vélo'V , le nombre de Vélo'V disponibles, et réservez le votre">
+    <meta name="viewport" content="width=device-width">
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Vélo'V | Réservation de Vélo'V en ligne sur Lyon" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="www.projet3.wedostedec.com" />
+    <meta property="og:image" content="images/logoV2.png" />
+    <meta property="og:description" content="Retrouvez les différentes stations de Vélo'V à Lyon, le nombre de Vélo'V disponibles, et réservez-en un." />
+</head>
+
+<body>
+    <!-- Header-->
+    <header>
+        <!-- image vélo'v-->
+        <img src="images/logoV1.jpg" alt="logo vélo'v">
+        <!-- titre-->
+        <h1>Locabike <br/>Réservez votre Vélo'V</h1>
+        <!-- image vélo'v-->
+        <img src="images/logoV2.png" alt="logo vélo'v">
+    </header>
+    <!-- diaporama-->
+    <section id="diaporama">
+        <div class="container">
+            <!-- titre diaporama-->
+            <h2>Comment ça marche ?</h2>
+            <!--slider-->
+            <div id="slider">
+                <!-- chaque slide contient figure et figcaption-->
+                <div id="slide1" class="slide">
+                    <figure>
+                        <img src="images/diaporama/carte1.png" alt="carte google maps avec marqueur">
+                        <figcaption>
+                            <h3>Etape 1</h3>
+                            <p>Sélectionner votre station en cliquant sur son marqueur</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- chaque slide contient figure et figcaption-->
+                <div id="slide2" class="slide">
+                    <figure>
+                        <img src="images/diaporama/carte2.png" alt="carte google maps + cadre infos">
+                        <figcaption>
+                            <h3>Etape 2</h3>
+                            <p>Si des Vélo'V sont disponibles vous avez la possiblité d'en réserver 1 .</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- chaque slide contient figure et figcaption-->
+                <div id="slide3" class="slide">
+                    <figure>
+                        <img src="images/diaporama/carte3.png" alt="carte google maps + emplacement signature ">
+                        <figcaption>
+                            <h3>Etape 3</h3>
+                            <p>Pour confirmer votre réservation une signature vous est demandé</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- chaque slide contient figure et figcaption-->
+                <div id="slide4" class="slide">
+                    <figure>
+                        <img src="images/diaporama/carte4.png" alt="carte google maps + cadre reservation infos">
+                        <figcaption>
+                            <h3>Etape 4</h3>
+                            <p>Entrer votre signature puis cliquer sur le bouton "Valider"</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- chaque slide contient figure et figcaption-->
+                <div id="slide5" class="slide">
+                    <figure>
+                        <img src="images/diaporama/carte5.png" alt="carte google maps">
+                        <figcaption>
+                            <h3>Etape 5</h3>
+                            <p>Une fois votre réservation validée une case d'infos apparait.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <!-- bouton de controle du diaporama-->
+        <div id="controlDiapo">
+            <button id="prev"><i class="fas fa-angle-left"></i></button>
+            <button id="stop"><i class="fas fa-stop"></i></button>
+            <button id="play"><i class="fas fa-play"></i></button>
+            <button id="next"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </section>
+    <!-- section contenant la map et le cadre d'infos sur les stations-->
+    <section id="reservation-map">
+        <!-- la map intégrer grace a JavaScript via l'api google -->
+        <div id="map">
+        </div>
+        <!-- cadre d'infos sur les stations qui apparait uniquement au clic sur un marqueur-->
+        <div id="reservation">
+            <h2>Infos station</h2>
+            <!-- les infos suivantes sont intégrer directement grace a jquery car elle changent a chaque clic sur un nouveau marqueur de la map-->
+            <p id="nomStation"></p>
+            <p id="adresseStation"></p>
+            <p id="etatStation"></p>
+            <p id="veloDispo"></p>
+            <p id="totalVelo"></p>
+            <p id="veloreserve"></p>
+            <p id="attacheDispo"></p>
+            <p id="messageErreurReservation"></p>
+            <p id="messageErreur">La réservation est impossible à cette station pour le moment</p>
+            <!--bouton qui permettent de faire une reservation ou de fermer le cadre des infos-->
+            <div id="reserv-button">
+                <p id="boutonReservation"><button>Réserver</button></p>
+                <p id="boutonFermer"><button>Fermer</button></p>
+            </div>
+            <!-- Canvas qui permettra de faire une signature pour valder une reservation-->
+            <div id="canvaSignature">
+                <h3>Signez ici pour réserver :</h3>
+                <canvas id="canvas"></canvas>
+                <!--bouton qui permettent de valider sa reservation ou d'effacer le canvas ces boutons apparaiissent uniquement quand l'utilisateur a signer-->
+                <div id="canvasControl">
+                    <p id="boutonValider" class="boutonCanvas"><button>Valider</button></p>
+                    <p id="boutonEffacer" class="boutonCanvas"><button>Effacer</button></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cadre qui contient les infos sur la station dans laquelle est reserver un velov ce cadre contient aussi le timer pour la validité de la reservation les information sont intégrer en jquery car elles changent a chaque reservation-->
+    <section id="infos-reserv">
+        <div id="reservation-Infos">
+            <h3>Réservation en cours :</h3>
+            <p id="stationReserver"></p>
+            <p id="messageReservation"></p>
+            <p id="timer"></p>
+            <p id="boutonAnnuler"><button>Annuler</button></p>
+        </div>
+        <!-- footer contenant des lien vers les reseaux sociaux-->
+    </section>
+    <footer id="contact">
+        <nav>
+            <ul id="menuReseaux">
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="far fa-envelope"></i></a></li>
+            </ul>
+        </nav>
+        <p class="copyright"><i class="far fa-copyright"> Copyright Locabike 2018</i> Publié le 20 juin 2018</p>
+        <p class="mailContact">Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+    </footer>
+    <!-- ici on fait appel aux different script externe-->
+    <!-- la bibliotheque JQuery-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- L'api google map-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-QOyka6s8nWe_oDO0sXzj5pZYFP42JYE"></script>
+    <!-- le marker clusterer-->
+    <script src="js/markerclusterer.js"></script>
+    <!-- la requete AJAX-->
+    <script src="js/ajax.js"></script>
+    <!-- le script du diaporama-->
+    <script src="js/diaporama.js"></script>
+    <!-- le script pour la map-->
+    <script src="js/map.js"></script>
+    <!--le Canvas-->
+    <script src="js/canvas.js"></script>
+    <!-- le script pour la reservation qui comprend le timer-->
+    <script src="js/reservation.js"></script>
+
+</body>
+
+</html>

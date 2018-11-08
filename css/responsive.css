@@ -1,0 +1,94 @@
+@media screen and (max-width: 570px) {
+    /* ------------------- Header -------------------------------------------------- */
+    header {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    header img:last-child {
+        display: none;
+    }
+
+    h1 {
+        font-size: 23px;
+        margin: 35px auto;
+    }
+
+    header img:first-child {
+        display: none;
+    }
+
+    /* -------------------- Section diaporama -------------------------------------*/
+    #diaporama h2 {
+        text-align: center;
+        font-size: 23px;
+    }
+
+    diaporama {
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .slide img {
+        max-width: 90%;
+    }
+
+    /* ---------------------- Section Reservation-Map --------------------- */
+    #reservation-map {
+        width: 90%;
+        height: 600px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+    }
+
+    #reservation {
+        width: 100%;
+        height: auto;
+        top: -3px;
+        right: -3px;
+
+    }
+
+    #reservation-Infos {
+        width: 90%;
+        margin: 15px auto;
+        bottom: 0;
+    }
+}
+
+/*----------------------------- max-width 1024px---------------------- */
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 25px;
+        margin: 35px auto;
+    }
+
+    header img:last-child {
+        display: none;
+    }
+
+    header img:first-child {
+        display: none;
+    }
+}
+
+/*----------------------------- max-width 1200px---------------------- */
+
+@media screen and (max-width: 1200px) {}
+
+
+/*----------------------------- min-width 1200px---------------------- */
+
+@media screen and (min-width:1200px) {}
